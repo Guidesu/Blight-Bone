@@ -35,6 +35,11 @@
 	droning_sound_night = null
 	deathsight_message = "a wretched, fetid bog"
 
+
+/area/rogue/outdoors/bog/spookcourtyard
+	name = "Grand Courtyard"
+	first_time_text = "The Grand Courtyard"
+
 /area/rogue/outdoors/bog/north
 	name = "Northern Terrorbog"
 
