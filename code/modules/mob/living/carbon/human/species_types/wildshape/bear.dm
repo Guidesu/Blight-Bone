@@ -18,11 +18,12 @@
 		src.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE) //Bears are good swimmers
 		src.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 
-		src.STASTR = 15 //Might be too high, but then again you're a bear, and you gotta wrestle
-		src.STACON = 6 
-		src.STAWIL = 6
-		src.STAPER = 12
-		src.STASPD = 5 // You are a hulking mass of muscle, and this is for balance reasons
+		src.STASTR = 13 //Strong enough to break out of cuffs instantly
+		src.STACON = 16 // TANKY enough to withstand bleeding as its final call; but that's the counter.  
+		src.STAWIL = 6 //Willpower or Stamina Represents Endurance; and they need this to actually fight 
+		src.STAPER = 10 // 
+		src.STAINT = 2 //Lower intelligence, easily tricked
+		src.STASPD = 1 //Slow, not meant for chasing
 
 		AddSpell(new /obj/effect/proc_holder/spell/self/bearclaws)
 		real_name = "Direbear" //So we don't get a random name
@@ -46,7 +47,7 @@
 		TRAIT_CRITICAL_RESISTANCE, // They have this due to low constitution. So they are not freakish tanky by default.
 		TRAIT_NOPAINSTUN,
 		TRAIT_CIVILIZEDBARBARIAN, //They can't punch, more like to kick people.
-		TRAIT_BIGGUY,
+		TRAIT_BIGGUY
 	)
 	inherent_biotypes = MOB_HUMANOID
 	armor = 5
@@ -140,7 +141,7 @@
 	sharpness = IS_SHARP
 	parrysound = "bladedmedium"
 	swingsound = list('sound/vo/mobs/direbear/direbear_attack1.ogg','sound/vo/mobs/direbear/direbear_attack2.ogg','sound/vo/mobs/direbear/direbear_attack3.ogg')
-	possible_item_intents = list(/datum/intent/simple/bear, /datum/intent/claw/lunge/iron, /datum/intent/claw/rend, /datum/intent/mace/smash)
+	possible_item_intents = list(/datum/intent/claw/cut/iron, /datum/intent/claw/lunge/iron, /datum/intent/claw/rend, /datum/intent/mace/smash)
 	parrysound = list('sound/combat/parry/parrygen.ogg')
 	embedding = list("embedded_pain_multiplier" = 0, "embed_chance" = 0, "embedded_fall_chance" = 0)
 	item_flags = DROPDEL
