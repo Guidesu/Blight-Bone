@@ -78,7 +78,14 @@
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		OFFSET_BREASTS_F = list(0,-1), \
 		)
-	race_bonus = list(STAT_PERCEPTION = 1, STAT_CONSTITUTION = 1)
+	race_bonus = list()
+	custom_selection = list(
+		"Wildkins Curse (+1 PER +1 CON)" = STATKEY_PER,STATKEY_CON,
+		"Aquatic Origin (Waterbreathing, Seadrinker)" = TRAIT_WATERBREATHING,TRAIT_SEA_DRINKER,
+		"Beastly Origin (Keen Ears, Wild Eater)" = TRAIT_KEENEARS,TRAIT_WILD_EATER,
+		"Winged Origin (Wing-Bound)" = TRAIT_WING_BOUND,
+		"Chitinous Origin (Venomous, Webwalk)" = TRAIT_VENOMOUS,TRAIT_WEBWALK,
+		)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
