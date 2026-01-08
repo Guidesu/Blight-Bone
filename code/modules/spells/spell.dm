@@ -218,6 +218,13 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 		var/obj/item/rogueweapon/woodstaff/staff = ranged_ability_user.is_holding_item_of_type(/obj/item/rogueweapon/woodstaff/)
 		if(staff)
 			newtime = newtime - (chargetime * (staff.cast_time_reduction))
+		// Ratworld: apply cast speed multiplier from enchants (acts as a divisor on time)
+		var/cast_mult = 1
+		if(isliving(ranged_ability_user))
+			var/mob/living/L = ranged_ability_user
+			cast_mult = ratworld_get_cast_speed_mult(L)
+		if(cast_mult > 0)
+			newtime = newtime / cast_mult
 		if(newtime > 0)
 			return newtime
 		else
@@ -355,6 +362,10 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	record_featured_stat(FEATURED_STATS_MAGES, user)
 	return TRUE
 
+// Ratworld: helper to compute final magic damage (normal + true) for a spell hit
+// Ratworld: spell damage helper is currently unused; spells directly
+// use existing damage pipelines plus magic defense / penetration.
+
 /obj/effect/proc_holder/spell/proc/charge_check(mob/user, silent = FALSE)
 	switch(charge_type)
 		if("recharge")
@@ -425,6 +436,10 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 		else if(ranged_ability_user.STAINT < SPELL_SCALING_THRESHOLD)
 			var/diff2 = SPELL_SCALING_THRESHOLD - ranged_ability_user.STAINT
 			recharge_time = initial(recharge_time) + (initial(recharge_time) * (diff2 * COOLDOWN_REDUCTION_PER_INT))
+		// Ratworld: apply cooldown reduction multiplier from enchants
+		if(isliving(ranged_ability_user))
+			var/mob/living/L = ranged_ability_user
+			recharge_time = recharge_time * ratworld_get_cooldown_reduction_mult(L)
 
 /obj/effect/proc_holder/spell/process()
 	if(charge_counter <= recharge_time) // Edge case when charge counter is set

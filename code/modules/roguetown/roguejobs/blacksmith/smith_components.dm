@@ -264,5 +264,18 @@
 			var/obj/item/lockpick/L = I
 			L.picklvl = modifier
 
+		// Ratworld: roll a crafted rarity for the finished item
+		if("rw_rarity" in I.vars)
+			I.vars["rw_rarity"] = ratworld_roll_crafted_rarity(user, I)
+			// Ensure socketable if magic+
+			ratworld_ensure_socketable(I)
+			// For Magic+ crafted gear: mark undiscovered so attributes roll on identification
+			var/r = I.vars?["rw_rarity"]
+			if(isnum(r) && r >= RW_RARITY_MAGIC)
+				I.vars["rw_discovered"] = FALSE
+				I.vars["rw_roll_on_discover"] = TRUE
+				I.vars["rw_enchants"] = null
+				I.vars["rw_enchant_vals"] = null
+
 	// Clean up the original workpiece
 	qdel(parent)

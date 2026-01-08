@@ -579,6 +579,9 @@
 		stat("SPD: \Roman [STASPD]")
 		stat("FOR: \Roman [STALUC]")
 		stat("PATRON: [patron]")
+		// Ratworld: show only aggregated totals in a single line
+		ratworld_statpanel_applied_effects()
+
 
 /mob/living/carbon/Stat()
 	..()

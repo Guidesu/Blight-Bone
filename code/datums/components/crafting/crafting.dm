@@ -312,14 +312,14 @@
 								X.add_fingerprint(user)
 								if(R.loud)
 									X.loud_message("Construction sounds can be heard")
-						else
-							var/atom/movable/I = new R.result (T)
-							I.CheckParts(parts, R)
-							if(R.diagonal)
-								I.OnCrafted(I.SelectDiagDirection(), user)
-							else
-								I.OnCrafted(user.dir, user)
-							I.add_fingerprint(user)
+								else
+									var/atom/movable/I = new R.result (T)
+									I.CheckParts(parts, R)
+									if(R.diagonal)
+										I.OnCrafted(I.SelectDiagDirection(), user)
+									else
+										I.OnCrafted(user.dir, user)
+									I.add_fingerprint(user)
 					user.visible_message(span_notice("[user] [R.verbage] \a [result_name]!"), \
 										span_notice("I [R.verbage_simple] \a [result_name]!"))
 					if(user.mind && R.skillcraft)
