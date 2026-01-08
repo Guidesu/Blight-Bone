@@ -23,7 +23,7 @@
 	display_order = JDO_MARTYR
 	social_rank = SOCIAL_RANK_NOBLE
 	give_bank_account = TRUE
-
+	
 	cmode_music = 'sound/music/combat_martyrsafe.ogg'
 	job_traits = list(
 		TRAIT_HEAVYARMOR,
@@ -46,6 +46,33 @@
 	job_subclasses = list(
 		/datum/advclass/martyr
 	)
+
+/datum/job/roguetown/martyr/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+	..()
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		H.advsetup = 1
+		H.invisibility = INVISIBILITY_MAXIMUM
+		H.become_blind("advsetup")
+//Title stuff. This is super sloppy.
+		var/prev_real_name = H.real_name
+		var/prev_name = H.name
+//Saint is gender neutral.
+		var/title = "Saint"
+//Actual titles now, based on pronouns.
+/*		switch(H.pronouns)
+			if(SHE_HER)
+				title = "Sister"
+			if(SHE_HER_M)
+				title = "Sister"
+			if(HE_HIM)
+				title = "Brother"
+			if(HE_HIM_F)
+				title = "Brother"*/
+//Now apply the actual title.
+		H.real_name = "[title] [prev_real_name]"
+		H.name = "[title] [prev_name]"
+
 
 /datum/advclass/martyr
 	name = "Martyr"
