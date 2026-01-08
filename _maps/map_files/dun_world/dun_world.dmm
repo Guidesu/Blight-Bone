@@ -8945,6 +8945,7 @@
 /obj/item/clothing/cloak/half,
 /obj/item/storage/backpack/rogue/satchel,
 /obj/item/storage/backpack/rogue/satchel,
+/obj/item/rogueweapon/mace/parasol/noble,
 /turf/open/floor/rogue/carpet/lord/center,
 /area/rogue/indoors/town/manor)
 "ciC" = (
@@ -17357,6 +17358,7 @@
 "ekz" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/machinery/light/rogue/wallfire/candle,
+/obj/item/rogueweapon/mace/parasol/noble,
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/under/town/basement/keep)
 "ekC" = (
@@ -20334,6 +20336,7 @@
 /obj/item/clothing/suit/roguetown/shirt/vampire,
 /obj/item/clothing/suit/roguetown/shirt/tunic/silktunic,
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/steward,
+/obj/item/rogueweapon/mace/parasol/noble,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor)
 "eVi" = (
@@ -22097,6 +22100,7 @@
 	pixel_y = 32
 	},
 /obj/structure/closet/crate/roguecloset/dark,
+/obj/item/rogueweapon/mace/parasol/noble,
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/under/town/basement/keep)
 "fpK" = (
@@ -53475,6 +53479,7 @@
 /obj/item/roguekey/sergeant,
 /obj/item/roguekey/armory,
 /obj/machinery/light/rogue/wallfire/candle,
+/obj/item/rogueweapon/mace/parasol/noble,
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/garrison)
 "mJQ" = (
@@ -72007,6 +72012,7 @@
 /obj/item/clothing/suit/roguetown/shirt/tunic/noblecoat,
 /obj/item/clothing/suit/roguetown/shirt/dress/royal/princess,
 /obj/item/clothing/suit/roguetown/shirt/dress/royal/prince,
+/obj/item/rogueweapon/mace/parasol/noble,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor)
 "rjG" = (
@@ -94974,6 +94980,7 @@
 	dir = 10;
 	pixel_y = 1
 	},
+/obj/item/rogueweapon/mace/parasol/noble,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/manor)
 "wFJ" = (
@@ -96082,6 +96089,7 @@
 "wTi" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /obj/structure/closet/crate/roguecloset/dark,
+/obj/item/rogueweapon/mace/parasol/noble,
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/under/town/basement/keep)
 "wTk" = (
